@@ -1,22 +1,9 @@
-import sys
-if __name__=='__main__':
-    n,k=sys.stdin.readline().split()
-    n=int(n)
-    k=int(k)
-    a=sys.stdin.readline().split()
-    for i in range(n):
-        a[i]=int(a[i])
-    dp=[]
-    tmpsum=0
-    for i in range(k):
-        tmpsum+=a[i]
-    i=k
-    j=0
-    dp.append(tmpsum)
-    while i<=n-k+1:
-        print a[i]
-        tmpsum=tmpsum-a[j]+a[i]
-        i+=1
-        j+=1
-        dp.append(tmpsum)
-    print dp
+a = [0,1]
+for i in range(4800):
+    a.append(a[-1] + a[-2])
+for i in range(int(input())):
+    n = int(input())
+    if n in a:
+        print("YES")
+    else:
+        print("NO")
